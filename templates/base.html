@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secure Login System</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f2f4f7;margin:0}
+.container{max-width:420px;margin:70px auto;background:white;padding:30px;border-radius:12px;box-shadow:0 4px 18px rgba(0,0,0,.1)}
+h1{text-align:center} input{width:100%;padding:12px;margin:8px 0 15px;box-sizing:border-box;border:1px solid #ccc;border-radius:7px}
+button{width:100%;padding:12px;border:0;border-radius:7px;background:#2563eb;color:white;cursor:pointer}
+a{color:#2563eb;text-decoration:none}.message{background:#eef6ff;padding:10px;margin-bottom:12px;border-radius:7px}.center{text-align:center}
+</style>
+</head>
+<body><div class="container">
+{% with messages = get_flashed_messages() %}
+{% for message in messages %}<div class="message">{{ message }}</div>{% endfor %}
+{% endwith %}
+{% block content %}{% endblock %}
+</div></body></html>
